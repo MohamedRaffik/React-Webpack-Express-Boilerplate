@@ -12,21 +12,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: 'babel-loader'
       },
       {
-        test: /\html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
+        test: /\.html$/,
+        use: 'html-loader'
       },
       {
-        test: /\css$/,
-        use: [ "style-loader", "css-loader" ]  
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'] 
       }
     ]
   },
@@ -37,8 +32,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./client/public/index.html",
-      filename: "./index.html"
+      template: './client/public/index.html',
+      filename: './index.html'
     })
   ]
 };
