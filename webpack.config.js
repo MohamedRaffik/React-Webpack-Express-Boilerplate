@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const AutoPrefixerPlugin = require('autoprefixer');
 
 module.exports = {
   entry: './client/index.js',
@@ -21,7 +22,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'] 
+        use: ['style-loader', 'css-loader', 'postcss-loader'] 
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -32,7 +33,7 @@ module.exports = {
           }
         ]
       }
-    ]
+    ],
   },
   devServer: {
     proxy: {
