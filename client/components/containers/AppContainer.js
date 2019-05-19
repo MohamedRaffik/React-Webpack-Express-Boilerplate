@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import Downloader from '../presentational/Downloader';
+import App from '../presentational/App';
 
 const MapStateToProps = (state, ownProps) => {
     return {
         tags: state.tags,
         youtube_url: state.youtube_url
-    };
-};
+    }
+}
 
-const DownloaderApp = connect(MapStateToProps, null)(Downloader);
+const AppContainer = connect(MapStateToProps, null)(App);
 
-export default DownloaderApp;
+export default AppContainer;

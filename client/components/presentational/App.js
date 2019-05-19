@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavBar, Downloader } from './components';
+import { NavBar, TagEdit } from '..';
 
 class App extends Component {
     render() {
@@ -7,7 +7,7 @@ class App extends Component {
             <div>
                 <NavBar />
                 <div>
-                    <Downloader />
+                    <TagEdit />
                 </div>
             </div>
         );
