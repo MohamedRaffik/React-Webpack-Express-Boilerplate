@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../stylesheets/App.css';
+import styles from './stylesheets/App.css';
 
 const App = () => {
 
@@ -7,12 +7,17 @@ const App = () => {
 
   const increment = (prevState) => {
     setCounter(prevState + 1);
-    window.localStorage.setItem('counter', prevState + 1)
+    window.localStorage.setItem('counter', prevState + 1);
   }
 
   const decrement = (prevState) => {
     setCounter(prevState - 1);
-    window.localStorage.setItem('counter', prevState - 1)
+    window.localStorage.setItem('counter', prevState - 1);
+  }
+
+  const reset = () => {
+    setCounter(0);
+    window.localStorage.setItem('counter', 0);
   }
 
   useEffect(() => {
@@ -28,7 +33,9 @@ const App = () => {
         <p className={styles.counter}>{counter}</p>
         <button className={styles.button} onClick={() => increment(counter)}>+</button>
       </div>
-      <button className={styles.reset}>Reset</button>
+      <div className={styles.row}>
+        <button onClick={() => reset()}>Reset</button>
+      </div>
     </div>
   );
 }
